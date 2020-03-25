@@ -1,28 +1,14 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="text-primary">
-      <q-toolbar >
-        <q-btn
-          flat
-          to="/"
-        >
-          <img
-            alt="Quasar logo"
-            src="~assets/tech4COVID19-Logo-Transparent.png"
-            width=150
-          >
+  <q-layout view="hHh lpR fFf">
 
-        </q-btn>
-        <q-toolbar-title>
-          <div class="text-dark">Mobilidade Urbana para profissionais de Saúde</div>
-        </q-toolbar-title>
-
-      </q-toolbar>
-    </q-header>
+    <q-drawer v-model="right" side="right" overlay behavior="mobile" elevated>
+      <!-- drawer content -->
+    </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view style="align-items: baseline;"/>
     </q-page-container>
+
   </q-layout>
 </template>
 
@@ -32,8 +18,17 @@ export default {
 
   data () {
     return {
-      leftDrawerOpen: false
+      right: false
     }
   }
 }
 </script>
+<style lang="scss">
+  .q-header .q-avatar .app-icon {
+    width: 2.2rem;
+    border-radius: 0;
+  }
+  .btn .q-btn__content {
+    text-transform: capitalize;
+  }
+</style>

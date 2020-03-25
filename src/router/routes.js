@@ -5,8 +5,10 @@ const routes = [
     component: () => import('layouts/SimpleLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: 'profissional_saude', component: () => import('pages/ProfissionalSaude.vue') },
-      { path: 'operador_transporte', component: () => import('pages/OperadorTransportes.vue') }
+      { path: 'campanhas', component: () => import('pages/Campanhas.vue') },
+      { path: 'operador_transporte', component: () => import('pages/OperadorTransportes.vue') },
+      { path: 'sobre_nos', component: () => import('pages/SobreNos.vue') },
+      { path: 'success', component: () => import('pages/Success.vue') }
     ]
   }
 ]

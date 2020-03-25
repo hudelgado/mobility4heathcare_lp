@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="campanhas flex flex-center">
     <div class="q-pa-md" style="width: 100%">
 
       <div class="row flex-center"><h4>Solicite o seu Voucher!</h4></div>
@@ -9,56 +9,79 @@
         @reset="onReset"
         class="q-gutter-md"
       >
-      <div class="row"><h5>Introduza as suas informações pessoais</h5></div>
+
+        <div class="row">
+          <h5>Introduza as suas informações pessoais</h5>
+        </div>
+
         <q-input
-          filled
+          required
+          border
           v-model="name"
           label="Nome próprio"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
         <q-input
+          required
           filled
           v-model="surname"
           label="Sobrenome"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
         <q-input
+          required
           filled
           type="email"
           v-model="email"
           label="E-mail"
+          :rules="[value => value != null || 'Este campo é necessário', value => validateEmail(value) || 'Indique um email válido']"
+          lazy-rules
         />
 
-        <q-input
+        <q-input required
           filled
           v-model="telephone"
           type="tel"
           label="Telefone"
-          mask="(###) ## #######"
+          mask="(###) #########"
+          :rules="[value => value != null || 'Este campo é necessário', value => validateTelephone(value) || 'Indique um telefone válido']"
+          lazy-rules
         />
 
-        <q-input
+        <q-input required
           filled
           v-model="address"
           label="Morada"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
-        <q-input
+        <q-input required
           filled
           v-model="city"
           label="Cidade"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
-        <q-input
+        <q-input required
           filled
           v-model="cp"
           label="Código postal"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
-        <q-input
+        <q-input required
           filled
           v-model="profisional_number"
           label="Número Cédula profissional"
+          :rules="[value => value != null || 'Este campo é necessário']"
+          lazy-rules
         />
 
         <div class="row">
@@ -77,7 +100,7 @@
             </q-card-section>
 
             <q-card-actions align="right">
-              <q-btn flat label="OK" color="secondary" to="/" />
+              <q-btn flat label="OK" color="secondary" to="/"/>
             </q-card-actions>
           </q-card>
         </q-dialog>
@@ -88,8 +111,10 @@
 </template>
 
 <script>
+import { validateEmail } from '../common/helpers'
+
 export default {
-  name: 'PageIndex',
+  name: 'PageCampanhas',
   data () {
     return {
       name: null,
@@ -126,7 +151,31 @@ export default {
       this.profisional_number = null
       this.alert = false
       this.$router.push('/')
+    },
+
+    validateEmail (email) {
+      return validateEmail(email)
+    },
+
+    validateTelephone (telephone) {
+      const regex = /\(\d{3}\) \d{9}/g
+      return telephone.match(regex) != null
+    }
+  },
+
+  computed: {
+    isFormValid: {
+      get: function () {
+        const nonEmptyKeys = Object.keys(Object.entries(this.$data).reduce((a, [k, v]) => (v ? { ...a, [k]: v } : a), {}))
+        const allValuesFilled = nonEmptyKeys.length === Object.keys(this.$data).length
+        return allValuesFilled
+      }
     }
   }
 }
 </script>
+<style lang="scss">
+  .campanhas {
+    color: red !important;
+  }
+</style>
