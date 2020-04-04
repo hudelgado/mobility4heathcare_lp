@@ -6,7 +6,7 @@
         ref="form"
         @submit="onSubmit"
         @reset="onReset"
-        style="padding: 0 2em;"
+        style="padding: 0 3em;"
       >
 
         <div class="row">
@@ -103,8 +103,12 @@
           />
         </div>
 
-        <div style="text-align: center;">
-          <q-btn rounded flat label="Submeter dados" type="submit" class="submit" @click="onSubmit"/>
+        <div class="q-gutter-sm">
+          <q-checkbox v-model="accepted_terms" :label="lorem" />
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <q-btn rounded flat label="Submeter dados" type="submit" class="submit m4h-button" @click="onSubmit"/>
         </div>
       </q-form>
 
@@ -145,7 +149,8 @@ export default {
       vehicle_numbers: null,
       districts: [],
       operacao_montada: null,
-      alert: false
+      accepted_terms: false,
+      lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
   },
 
@@ -169,7 +174,7 @@ export default {
       this.cp = null
       this.vehicle_kind = null
       this.vehicle_numbers = 0
-      this.alert = false
+      this.accepted_terms = false
     },
 
     validateEmail (email) {
@@ -209,5 +214,13 @@ export default {
   }
   .q-page.operadores .q-btn-group > .q-btn-item:not(:first-child) {
     margin-left: 0.5rem;
+  }
+  .q-page.operadores .q-checkbox {
+    font-weight: 200;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .q-page.operadores .q-checkbox .q-checkbox__bg {
+    border-radius: 6px;
   }
 </style>
