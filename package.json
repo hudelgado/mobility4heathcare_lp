@@ -1,7 +1,7 @@
 {
   "name": "mobility4heathcare_lp",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
+  "description": "Apoio de mobilidade aos profissionais de saúde",
   "productName": "Mobility4Healthcare",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",

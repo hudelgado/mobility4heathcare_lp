@@ -5,7 +5,7 @@
       <img alt="Mobility4health" src="~assets/Vertical-branco.svg" class="callout">
       <p class="callout-text">Bem-vindo à aplicação que apoia o transporte dos profissionais de saúde durante a pandemia CODIV-19. Para que consiga chegar em segurança ao seu destino.</p>
       <div>
-        <h3 class="tittle">Brevemente disponível</h3>
+        <h3 class="tittle" style="font-size: 1.5rem;">Brevemente disponível</h3>
       </div>
       <img src="~/assets/landing.svg" class="callout-logo"/>
       <SocialLinks></SocialLinks>
