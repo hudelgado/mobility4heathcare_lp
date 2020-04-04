@@ -1,6 +1,6 @@
 <template>
   <q-page class="home flex column">
-    <Header></Header>
+    <Header menu></Header>
     <div class="content flex column">
       <img alt="Mobility4health" src="~assets/Vertical-branco.svg" class="callout">
       <p class="callout-text">Bem-vindo à aplicação que apoia o transporte dos profissionais de saúde durante a pandemia CODIV-19. Para que consiga chegar em segurança ao seu destino.</p>
