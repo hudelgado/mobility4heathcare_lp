@@ -27,6 +27,7 @@ export default {
     Header
   }
 }
+
 </script>
 <style lang="scss">
   .q-page.home {
