@@ -7,8 +7,10 @@
         <h3 class="tittle" style="font-size: 1.5rem;">Brevemente disponível</h3>
       </div>
       <img src="~/assets/landing.svg" class="callout-logo"/>
-      <SocialLinks></SocialLinks>
-      <img src="~/assets/tech4covid.svg" class="logo"/>
+      <div class="footer">
+        <SocialLinks></SocialLinks>
+        <img src="~/assets/tech4covid.svg" class="logo"/>
+      </div>
     </div>
     <img src="~/assets/crosses.svg" style="position: absolute; width: 100vw; height: 100vh; top: 0; left: 0;"/>
   </q-page>
@@ -66,5 +68,37 @@ export default {
   }
   .m4h-button {
     width: 100%;
+  }
+  @media (min-width: 724px) {
+    .home .content {
+      max-width: 724px;
+    }
+    .home .content .callout {
+      width: 70%
+    }
+
+    .callout-logo {
+      margin-left: -2em;
+    }
+
+    .home .content {
+      margin: 4em 0em 1.5em 0em;
+      padding: 0 10em;
+      text-align: left;
+      font-size: 0.9rem;
+      flex-direction: column;
+      align-items: start;
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-left: -4rem;
+    }
+    .home .content .logo {
+      height: 60px;
+      margin: 0;
+    }
   }
 </style>
