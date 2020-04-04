@@ -1,25 +1,17 @@
 <template>
-  <q-page class="operadores flex flex-center">
-    <q-toolbar>
-      <q-toolbar-title>
-        <q-avatar>
-          <q-btn flat to="/"><img src="~/assets/Monograma-azul.svg" class="app-icon"></q-btn>
-        </q-avatar>
-      </q-toolbar-title>
-
-      <q-btn dense flat>
-        <img src="~/assets/menu-black.svg">
-      </q-btn>
-    </q-toolbar>
-    <div class="q-pa-md" style="width: 80%">
-      <div class="row flex-center"><h5>Introduza os dados<br /><b>da sua empresa</b></h5></div>
+  <q-page class="operadores flex column">
+    <Header operators black></Header>
+    <div class="content">
       <q-form
         ref="form"
         @submit="onSubmit"
         @reset="onReset"
-        class="q-gutter-xl"
+        style="padding: 0 2em;"
       >
 
+        <div class="row">
+          <h5 style="margin-block-start: -1em;">Introduza os dados<br /><b>da sua empresa</b></h5>
+        </div>
         <q-input
           lazy-rules
           stack-label
@@ -27,6 +19,7 @@
           label="Empresa"
           :rules="[value => value != null || 'Este campo é necessário']"
           outlined
+          placeholder="Ex: Mobility4health"
         />
 
         <q-input
@@ -36,6 +29,8 @@
           label="NIPC"
           :rules="[value => value != null || 'Este campo é necessário']"
           outlined
+          mask="#########"
+          placeholder="Ex. 500456789"
         />
 
         <q-input
@@ -46,6 +41,7 @@
           label="E-mail"
           :rules="[value => value != null || 'Este campo é necessário', value => validateEmail(value) || 'Indique um email válido']"
           outlined
+          placeholder="Ex. carla.silva@mobility4health.pt"
         />
 
         <q-input
@@ -57,6 +53,7 @@
           mask="#########"
           :rules="[value => value != null || 'Este campo é necessário', value => validateTelephone(value) || 'Indique um telefone válido']"
           outlined
+          placeholder="Ex. 961234567"
         />
 
         <q-select
@@ -73,9 +70,10 @@
           stack-label
           v-model="vehicle_numbers"
           label="Número viaturas"
-          mask="####"
-          :rules="[value => value > 0 || 'Indique o número de viaturas']"
+          mask="#########"
+          :rules="[value => value && value > 0 || 'Indique o número de viaturas']"
           outlined
+          placeholder="Ex. 3"
         />
 
         <q-select
@@ -116,9 +114,13 @@
 
 <script>
 import { validateEmail } from '../common/helpers'
+import Header from '../components/Header'
 
 export default {
   name: 'PageOperadorTransportes',
+  components: {
+    Header
+  },
   data () {
     return {
       vehicle_kinds: [
@@ -140,7 +142,7 @@ export default {
       city: null,
       cp: null,
       vehicle_kind: null,
-      vehicle_numbers: 0,
+      vehicle_numbers: null,
       districts: [],
       operacao_montada: null,
       alert: false
@@ -186,6 +188,12 @@ export default {
     background: $support-background;
     color: $dark;
   }
+  .q-page.operadores form > *:not(first-child) {
+    margin-top: 2rem;
+  }
+  .q-page.operadores .content {
+    width: 100%;
+  }
   .q-input {
     margin-bottom: 1em;
   }
@@ -201,8 +209,5 @@ export default {
   }
   .q-page.operadores .q-btn-group > .q-btn-item:not(:first-child) {
     margin-left: 0.5rem;
-  }
-  [hidden] {
-    display: none;
   }
 </style>

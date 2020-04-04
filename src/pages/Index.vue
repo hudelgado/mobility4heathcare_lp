@@ -1,11 +1,11 @@
 <template>
   <q-page class="home flex column">
-    <Header menu></Header>
+    <Header home></Header>
     <div class="content flex column">
       <img alt="Mobility4health" src="~assets/Vertical-branco.svg" class="callout">
       <p class="callout-text">Bem-vindo à aplicação que apoia o transporte dos profissionais de saúde durante a pandemia CODIV-19. Para que consiga chegar em segurança ao seu destino.</p>
       <div>
-        <q-btn flat rounded class="to_campanhas m4h-button" label="Ofertas disponíveis" to="/operador_transporte"/>
+        <q-btn flat rounded class="to_campanhas m4h-button" label="Ofertas disponíveis" to="/campanhas"/>
         <q-btn flat rounded class="to_operators m4h-button" label="Sou um operador de transportes" to="/operador_transporte"/>
       </div>
       <img src="~/assets/landing.svg" class="callout-logo"/>

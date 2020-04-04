@@ -1,15 +1,7 @@
 <template>
   <q-page class="about" >
-    <Header close></Header>
+    <Header about></Header>
     <div class="page" style="padding: 0 2rem;">
-      <!-- <q-toolbar>
-        <q-toolbar-title>
-        </q-toolbar-title>
-
-        <q-btn dense flat to="/">
-          <img src="~/assets/close.svg" to="/">
-        </q-btn>
-      </q-toolbar> -->
 
       <header class="title"><h5 style="margin-block-end: 0.2em; margin-block-start: 0;">Sobre nós</h5></header>
       <p style="top: -3rem;">A <b style="font-size: bold;">Mobility Healthcare</b> é uma aplicação criada pelo movimento tech4COVID19 que pretende disponibilizar aos profissionais de saúde alternativas de transporte privado.</p>
@@ -18,7 +10,6 @@
     </div>
     <div class="who-we-are page" style="overflow: hidden;">
       <header class="title"><h5 style="padding: 1em 0 0 0; margin-block-end: 0.2em; margin-block-start: 0;">Quem somos</h5></header>
-      <!-- <header class="title"><h5 style="padding: 1em 0 0 0;margin-block-end: 2rem;"></h5></header> -->
       <ul class="grid">
         <li class="volunteer" v-for="(item, index) in volunteers" :key="index">
           <span class="avatar"><img /></span>
