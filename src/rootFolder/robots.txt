@@ -1,0 +1,5 @@
+# robots.txt 
+user-agent: *
+allow: /
+
+sitemap: https://www.mob4h.pt/sitemap.xml

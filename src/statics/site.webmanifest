@@ -1,0 +1,15 @@
+{
+    "name": "Mobility4Healthcare",
+    "short_name": "mob4h",
+    "description": "Plataforma de apoio de mobilidade aos profissionais de saúde.",
+    "icons": [
+        {
+            "src": "statics/app-logo-android-chrome.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#0A86FF",
+    "background_color": "#0AD3B6",
+    "display": "standalone"
+}

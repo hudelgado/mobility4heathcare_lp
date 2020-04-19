@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.productName %></title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.productDescription %>">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=5, minimum-scale=1, width=device-width<% if (htmlWebpackPlugin.options.ctx.mode.cordova || htmlWebpackPlugin.options.ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="statics/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="statics/favicon-16x16.png">
+    <link rel="icon" type="image/ico" href="statics/icons/favicon.ico">
+
+    <link rel="icon" type="image/png" href="statics/app-logo-128x128.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="statics/app-logo-apple-touch.png">
+    <link rel="mask-icon" href="statics/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="manifest" href="statics/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#0A86FF">
+    <meta name="theme-color" content="#0A86FF">
+  </head>
+  <body>
+    <div id="q-app"></div>
+  </body>
+</html>
